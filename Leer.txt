@@ -1,0 +1,9 @@
+Utilizando AsyncStorage se puede almacenar información en el dispositivo de manera local, de forma que cuando no haya 
+internet, no se pierde la información y se puede seguir usando el punto de venta. Ya al final del día, lo único que
+habría que hacer sería conectar la app a internet y cerrar turno para que se guarde la información en la base de datos.
+
+Este mismo método puede usarse la primera vez que se abre la aplicación, se puede guardar la información del menú y usuarios
+de manera local.
+
+React, al igual que Vue, tiene un estado, en el que se pueden declarar y usar variables usando this.state.variable
+(en Vue es this.variable), usando esto, se puede reciclar mucho código del que se está usando en el punto de venta en Vue.

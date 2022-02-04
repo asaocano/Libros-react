@@ -14,7 +14,7 @@ export default function ModificarLibro(props) {
     const getLibro = async() =>{
         //const id = props.id;
         const id = props.route.params.id;;
-        const respuesta = await axios.get('http://192.168.100.5/apilibro/?id='+id);
+        const respuesta = await axios.get('http://direccion_api/apilibro/?id='+id);
         
         setId(respuesta.data.id);
         setNombre(respuesta.data.nombre);
@@ -24,7 +24,7 @@ export default function ModificarLibro(props) {
     const updateLibro = async()=>{
         const obj = {id,nombre,edicion};
         try {
-            const respuesta = await axios.put('http://192.168.100.5/apilibro/', obj);
+            const respuesta = await axios.put('http://direccion_api/apilibro/', obj);
             dropDownAlertRef.alertWithType('success', 'Éxito', respuesta.data.msg); 
         } catch (error) {
             dropDownAlertRef.alertWithType('error', 'Error', 'El libro no pudo ser modificado');
@@ -37,7 +37,7 @@ export default function ModificarLibro(props) {
     const deleteLibro = async() =>{
         const id = props.route.params.id;
         try {
-            const respuesta = await axios.delete('http://192.168.100.5/apilibro/?id='+id);
+            const respuesta = await axios.delete('http://direccion_api/apilibro/?id='+id);
             dropDownAlertRef.alertWithType('success', 'Éxito' , respuesta.data.msg);
         } catch (error) {
             dropDownAlertRef.alertWithType('error', 'Error', 'El libro no pudo ser modificado');

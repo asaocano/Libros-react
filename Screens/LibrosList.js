@@ -17,7 +17,7 @@ const LibrosList = (props) => {
   }, [isFocused]);
 
   const getLibros = async () => {
-    const respuesta = await axios.get("http://192.168.100.5/apilibro/");
+    const respuesta = await axios.get("http://direccion_api/apilibro/");
     setListaLibros(respuesta.data);
   };
   const cerrarSesion = () =>{

@@ -10,7 +10,7 @@ export default function CrearLibro(props){
     const addLibro = async() => {
         const obj = {nombre, edicion};
         try {
-            const respuesta = await axios.post('http://192.168.100.5/apilibro/', obj);
+            const respuesta = await axios.post('http://direccion_api/apilibro/', obj);
             dropDownAlertRef.alertWithType('success', 'Éxito', respuesta.data.msg);
             setNombre('');
             setEdicion('');

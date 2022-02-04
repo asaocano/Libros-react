@@ -21,7 +21,7 @@ const Login = (props) => {
       
       const respuesta = await axios({
         method: "get",
-        url: "http://192.168.100.5/apilibro/",
+        url: "http://direccion_api/apilibro/",
         params: obj,
       });
       
@@ -29,7 +29,7 @@ const Login = (props) => {
         setUser("");
         setContra("");
         dropDownAlertRef.alertWithType("success", "Éxito", "¡Bienvenido!");
-        const jsonValue = JSON.stringify(respuesta.data);
+        const jsonValue = JSON.stringify(respuesta.data); //Usando este método, se puede guardar un JSON de manera local
         await AsyncStorageLib.setItem('user', jsonValue);
 
         setTimeout(() => {
